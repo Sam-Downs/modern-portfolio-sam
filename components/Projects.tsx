@@ -69,7 +69,7 @@ export default function projects({}: Props) {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              src='/images/firstfinal.png'
+              src='../public/images/firstfinal.png'
               className=''
             />
             <motion.p
@@ -130,7 +130,7 @@ export default function projects({}: Props) {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              src='/images/secondfinal.png'
+              src='../public/images/secondfinal.png'
               className=''
             />
             <motion.p
