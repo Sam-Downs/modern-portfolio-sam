@@ -37,6 +37,9 @@ export default function projects({}: Props) {
   return (
     <div className='flex relative h-screen text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center'>
       <h3 className='absolute top-24 uppercase tracking-[20px] text-cyan-400 text-2xl'>Projects</h3>
+      <div>
+        
+      </div>
       <motion.div
         //hover
         whileHover={{
