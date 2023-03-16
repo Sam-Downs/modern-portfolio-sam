@@ -19,7 +19,7 @@ const Home: NextPage = () => {
   return (
     <div className='bg-[rgba(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/60 scrollbar-thumb-[rgba(34,211,238,1)]'>
       <Head>
-        <title>Sam's Portfolio</title>
+        <title>Sams Portfolio</title>
       </Head>
 
       <Header />
