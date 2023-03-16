@@ -10,7 +10,6 @@ import Skills from "@/components/Skills"
 import Projects from "@/components/Projects"
 import Contact from "@/components/Contact"
 import { Canvas } from 'react-three-fiber';
-import StarsCanvas from '../components/StarryBackground';
 
 const inter = Inter({ subsets: ['latin'] })
 
