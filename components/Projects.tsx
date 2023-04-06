@@ -5,9 +5,9 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { SocialIcon } from 'react-social-icons';
 
-import firstfinal from '/images/firstfinal.png';
-import secondfinal from '/images/firstfinal2.png';
-import thirdfinal from '/images/secondfinal.png';
+import firstfinal from '/images/firstfinal -Copy.png';
+import secondfinal from '/images/firstfinal2 -Copy.png';
+import thirdfinal from '/images/secondfinal -Copy.png';
 
 export default function App() {
   const [currentSlide, setCurrentSlide] = React.useState(0);
