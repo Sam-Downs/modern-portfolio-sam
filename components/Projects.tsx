@@ -5,9 +5,9 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { SocialIcon } from 'react-social-icons';
 
-import firstFinal from '../public/images/firstfinal -Copy.png';
-import secondFinal from '../public/images/firstfinal2 -Copy.png';
-import thirdFinal from '../public/images/secondfinal -Copy.png';
+import firstFinal from '/images/firstfinal -Copy.png';
+import secondFinal from '/images/firstfinal2 -Copy.png';
+import thirdFinal from '/images/secondfinal -Copy.png';
 
 export default function App() {
   const [currentSlide, setCurrentSlide] = React.useState(0);
@@ -48,8 +48,8 @@ export default function App() {
               />
             </div>
             <div className='flex flex-row h-4/6 w-full justify-evenly'>
-              <Image src={firstFinal} alt={''} className='border border-black h-auto w-fit' />
-              <Image src={secondFinal} alt={''} className='border border-black h-auto w-fit' />
+              <Image src='/images/firstfinal - Copy.png' alt={''} className='border border-black h-auto w-fit' />
+              <Image src='/images/firstfinal2 - Copy.png' alt={''} className='border border-black h-auto w-fit' />
             </div>
 
             <p className='text-base'>An anime tracker made with C# to manage shows watched.</p>
@@ -70,7 +70,7 @@ export default function App() {
               />
             </div>
             <div className='flex flex-row h-4/6 w-full justify-evenly'>
-              <Image src={thirdFinal} alt={''} className='border border-black h-auto w-2/3' />
+              <Image src='secondfinal - Copy.png' alt={''} className='border border-black h-auto w-2/3' />
             </div>
             <p className='text-base'>A full stack MERN application focused on Issue tracking.</p>
           </div>
