@@ -70,7 +70,7 @@ export default function App() {
               />
             </div>
             <div className='flex flex-row h-4/6 w-full justify-evenly'>
-              <Image src='secondfinal - Copy.png' alt={''} className='border border-black h-auto w-2/3' />
+              <Image src='/images/secondfinal - Copy.png' alt={''} className='border border-black h-auto w-2/3' />
             </div>
             <p className='text-base'>A full stack MERN application focused on Issue tracking.</p>
           </div>
