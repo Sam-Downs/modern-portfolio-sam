@@ -32,7 +32,7 @@ export default function Skills({}: Props) {
         {technologies.map((technology, index) => (
           <motion.div
             key={index}
-            className='bg-cyan-400 p-2 rounded-lg shadow-md mx-4 my-2 flex flex-col relative text-center md:text-left md:flex-row justify-evenly items-center xs:m-10 sm'
+            className='bg-cyan-400 p-2 rounded-lg shadow-md mx-4 my-2 flex flex-col relative text-center md:text-left md:flex-row justify-evenly items-center xs:m-10 sm z-50'
             whileHover={{ scale: 1.05, boxShadow: '0 0 8px rgba(0,0,0,0.3)' }}
             drag
             dragConstraints={{}}

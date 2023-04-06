@@ -2,21 +2,21 @@ import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';
 import Background from './Background';
-import mypic from '../public/images/heroimg.png'
+import mypic from '../public/images/heroimg.png';
+import { motion } from 'framer-motion';
 
 type Props = {};
 
 export default function Hero({}: Props) {
   return (
-    <div className='h-screen flex flex-col items-center justify-center text-center overflow-hidden'>
+    <motion.div
+      initial={{ y: 500, opacity: 0, scale: 0.5 }}
+      animate={{ y: 0, opacity: 1, scale: 1 }}
+      transition={{ duration: 1.5 }}
+      className='h-screen flex flex-col items-center justify-center text-center overflow-hidden'
+    >
       <Background />
-      <Image
-        className='relative rounded-full mx-auto object-cover mb-12'
-        alt=''
-        src={mypic}
-        width={128}
-        height={128}
-      />
+      <Image className='relative rounded-full mx-auto object-cover mb-12' alt='' src={mypic} width={128} height={128} />
       <div className='z-20'>
         <h2 className='text-sm uppercase text-cyan-500 pb-2 tracking-[10px] mt-2 mb-6'>Developer</h2>
         <div className='pt-10'>
@@ -42,6 +42,6 @@ export default function Hero({}: Props) {
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -18,6 +18,12 @@ export default function Header({}: Props) {
           bgColor='transparent'
           className='cursor-pointer'
         />
+        <SocialIcon
+          url='https://github.com/Sam-Downs'
+          fgColor='#22D3EE'
+          bgColor='transparent'
+          className='cursor-pointer'
+        />
       </motion.div>
       <motion.div 
         initial={{ x: -500, opacity: 0, scale: 0.5 }}
