@@ -30,7 +30,7 @@ export default function About({}: Props) {
           My name is Sam Downs and I am a fourth semester student at Ranken Technical College studying Application and
           Web Development on track to graduate in May of 2023. I am passionate about creating web applications using
           modern technologies. Over the course of my studies, I have gained expertise in the MERN stack and ASP.NET
-          Core, and I am excited to apply these skills to real-world projects. As I approach graduation, I am eager to
+          Core, and I am excited to apply these skills to real-world projects. Since graduation, I am eager to
           take on new challenges and continue learning and growing as a developer.
         </p>
       </div>
