@@ -48,8 +48,8 @@ export default function App() {
               />
             </div>
             <div className='flex flex-row h-4/6 w-full justify-evenly'>
-              <Image src='/images/firstfinal - Copy.png' alt={''} className='border border-black h-auto w-fit' />
-              <Image src='/images/firstfinal2 - Copy.png' alt={''} className='border border-black h-auto w-fit' />
+              <img src='/images/firstfinal - Copy.png' alt={''} className='border border-black h-auto w-fit' />
+              <img src='/images/firstfinal2 - Copy.png' alt={''} className='border border-black h-auto w-fit' />
             </div>
 
             <p className='text-base'>An anime tracker made with C# to manage shows watched.</p>
@@ -70,7 +70,7 @@ export default function App() {
               />
             </div>
             <div className='flex flex-row h-4/6 w-full justify-evenly'>
-              <Image src='/images/secondfinal - Copy.png' alt={''} className='border border-black h-auto w-2/3' />
+              <img src='/images/secondfinal - Copy.png' alt={''} className='border border-black h-auto w-2/3' />
             </div>
             <p className='text-base'>A full stack MERN application focused on Issue tracking.</p>
           </div>

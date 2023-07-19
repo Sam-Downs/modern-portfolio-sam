@@ -21,18 +21,21 @@ export default function Skills({}: Props) {
     { name: 'Github', image: '/images/githubb.png' },
     { name: 'Node.js', image: '/images/nodejs.png' },
     { name: 'Three.js', image: '/images/three.png' },
+    { name: 'React', image: '/images/reactjs.png' },
+    { name: 'C#', image: '/images/csharp.png' },
+    { name: 'SQL', image: '/images/sql.png' },
   ];
 
   const constraintsRef = useRef(null);
 
   return (
     <div className='flex flex-col relative h-screen text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center'>
-      <h3 className='absolute top-24 uppercase tracking-[20px] text-cyan-500 text-2xl'>Skills</h3>
+      <h3 className='absolute top-20 md:top-24 uppercase tracking-[20px] text-cyan-500 text-2xl'>Skills</h3>
       <div className='flex flex-wrap justify-center items-center mt-8 container'>
         {technologies.map((technology, index) => (
           <motion.div
             key={index}
-            className='bg-cyan-400 p-2 rounded-lg shadow-md mx-4 my-2 flex flex-col relative text-center md:text-left md:flex-row justify-evenly items-center xs:m-10 sm z-50'
+            className='bg-cyan-400 p-2 rounded-lg shadow-md mx-4 my-2 flex flex-col relative text-center md:text-left md:flex-row justify-evenly items-center xs:m-10 sm z-40'
             whileHover={{ scale: 1.05, boxShadow: '0 0 8px rgba(0,0,0,0.3)' }}
             drag
             dragConstraints={{}}

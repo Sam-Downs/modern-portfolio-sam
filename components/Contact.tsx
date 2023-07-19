@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
-import { motion } from 'framer-motion';
-
-type Inputs = {
-  name: String;
-  email: String;
-  message: String;
-};
 
 type Props = {};
+
+type Inputs = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
 
 export default function Contact({}: Props) {
   const [name, setName] = useState('');
@@ -21,7 +21,6 @@ export default function Contact({}: Props) {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Replace these values with your own
     const serviceId = 'service_bpo398d';
     const templateId = 'template_j9yhmw2';
     const publicId = 'bNAzVpPcHChnM1AS2';
@@ -31,7 +30,7 @@ export default function Contact({}: Props) {
       from_email: email,
       message,
       to_name: 'Sam Downs',
-      to_email: 'thesamdowns@gmail.com'
+      to_email: 'thesamdowns@gmail.com',
     };
 
     emailjs.send(serviceId, templateId, templateParams, publicId).then(
@@ -44,75 +43,61 @@ export default function Contact({}: Props) {
       }
     );
   };
-
   return (
-    <div className='h-screen flex top-12 relative flex-col text-center md:text-left m:flex-row max-w-7xl px-10 justify-evenly mx-auto overflow-hidden'>
-      <div className='flex flex-col items-center space-x-5 justify-center md:flex-row'>
-        <div className='col-4 flex items-center justify-center'>
-          <PhoneIcon className='text-cyan-500 h-7 w-7 animate-pulse  mt-1' />
-          <p className='text-2xl'>+(314)681-6337</p>
+    <div className='h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-center sm:justify-evenly mx-auto items-center md:space-x-8 space-y-8 md:space-y-0'>
+      <h3 className='md:absolute top-14 uppercase tracking-[20px] text-cyan-500 text-xl'>Contact</h3>
+      <div className='flex flex-col space-y-5'>
+        <h4 className='text-2xl md:text-4xl font-semibold text-center'>
+          I have got just what you need. <span className='decoration-[#22D3EE]/50 underline'>Lets Talk.</span>
+        </h4>
+        <div className='space-y-3'>
+          <div className='flex items-center space-x-5 justify-center'>
+            <PhoneIcon className='text-[#22D3EE] h-7 w-7 animate-pulse' />
+            <p className='text-lg md:text-2xl'>+(314)681-6337</p>
+          </div>
+          <div className='flex items-center space-x-5 justify-center'>
+            <EnvelopeIcon className='text-[#22D3EE] h-7 w-7 animate-pulse' />
+            <p className='text-lg md:text-2xl'>thesamdowns@gmail.com</p>
+          </div>
+          <div className='flex items-center space-x-5 justify-center'>
+            <MapPinIcon className='text-[#22D3EE] h-7 w-7 animate-pulse' />
+            <p className='text-lg md:text-2xl'>Saint Louis, MO</p>
+          </div>
         </div>
-        <div className='col-4 flex items-center justify-center px-4'>
-          <EnvelopeIcon className='text-cyan-500 h-7 w-7 animate-pulse mt-1' />
-          <p className='text-2xl '>thesamdowns@gmail.com</p>
-        </div>
-        <div className='col-4 flex items-center justify-center'>
-          <MapPinIcon className='text-cyan-500 h-7 w-7 animate-pulse  mt-1' />
-          <p className='text-2xl'>Saint Louis, MO</p>
-        </div>
-      </div>
-      <div className='flex-row items-stretch'>
-      <h3 className='top-24 text-cyan-400 text-2xl text-center items-center'>Feel free to contact me!</h3>
-        <form onSubmit={handleSubmit} className='items-stretch w-full max-w-lg mx-auto mt-10'>
-          <div className='mb-4'>
-            <label htmlFor='name' className='block font-medium mb-2'>
-              Name
-            </label>
+        <form onSubmit={handleSubmit} className='flex flex-col space-y-2 w-fit mx-auto'>
+          <div className='flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2'>
             <input
-              type='text'
               id='name'
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className='w-full px-3 py-2 border border-cyan-400 rounded bg-gray-500'
+              placeholder='Name'
+              className='contactInput'
+              type='text'
               required
             />
-          </div>
-          <div className='mb-4'>
-            <label htmlFor='email' className='block font-medium mb-2'>
-              Email
-            </label>
             <input
-              type='email'
               id='email'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className='w-full px-3 py-2 border border--400 border-cyan-400 rounded bg-gray-500'
+              placeholder='Email'
+              className='contactInput'
+              type='email'
               required
             />
           </div>
-          <div className='mb-4'>
-            <label htmlFor='message' className='block font-medium mb-2'>
-              Message
-            </label>
-            <textarea
-              id='message'
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              className='w-full px-3 py-2 border border-cyan-400 rounded bg-gray-500'
-              rows={5}
-              required
-            ></textarea>
-          </div>
-          <div className='flex items-center justify-between'>
-            <button
-              type='submit'
-              className='bg-cyan-500 text-white px-4 py-2 rounded hover:bg-gray-500 focus:bg-gray-500'
-            >
-              Send
-            </button>
-            {statusMessage && <p className='text-sm text-gray-500 ml-4'>{statusMessage}</p>}
-          </div>
+          <textarea
+            id='message'
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder='Message'
+            className='contactInput'
+            required
+          ></textarea>
+          <button type='submit' className='bg-[#22D3EE] py-5 px-10 rounded-md text-black font-bold text-lg'>
+            Submit
+          </button>
         </form>
+        {statusMessage && <p className='text-center text-lg md:text-xl text-cyan-500 mt-5'>{statusMessage}</p>}
       </div>
     </div>
   );

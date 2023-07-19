@@ -1,0 +1,126 @@
+.navbar {
+  position: fixed;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+  z-index: 50;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar ul li {
+  width: 200px;
+  position: relative;
+  text-align: left;
+  padding: 10px 0; /* change the padding value as you wish */
+}
+
+.navbar ul li .dot {
+  display: block;
+  padding: 5px 0;
+  color: rgb(6, 182, 212);
+}
+
+.navbar ul li .dot span {
+  display: inline-block;
+  letter-spacing: 1px;
+  margin-left: 30px;
+  transform: translateX(-30px);
+  opacity: 0;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.navbar ul li:hover .dot span {
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+.navbar ul li .dot::before,
+.navbar ul li .dot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  border-radius: 50%;
+  display: block;
+}
+
+.navbar ul li .dot::before {
+  height: 5px;
+  width: 5px;
+  border: 2px solid rgb(6, 182, 212);
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.navbar ul li:hover .dot::before {
+  border-color: rgb(6, 182, 212);
+  background: rgb(6, 182, 212);
+}
+
+.navbar ul li .dot::after {
+  height: 15px;
+  width: 15px;
+  border: 2px solid rgb(6, 182, 212);
+  left: -5px;
+  transform: translateY(-50%) scale(0);
+  transition: transform 0.2s;
+}
+
+.navbar ul li:hover .dot::after {
+  transform: translateY(-50%) scale(1);
+}
+
+.navbar::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  left: 2px;
+  width: 1px; /* Adjust the width to change the thickness of the line */
+  height: 40%;
+  background: rgb(6, 182, 212); /* Change to the color of the line */
+}
+
+.navbar::after {
+  content: '';
+  position: absolute;
+  top: 385px;
+  left: 2px;
+  width: 1px; /* Adjust the width to change the thickness of the line */
+  height: 40%;
+  background: rgb(6, 182, 212); /* Change to the color of the line */
+}
+
+/* Hide navigation dots on screens less than 768px */
+@media (max-width: 900px) {
+  .navbar {
+    display: none;
+  }
+}
+
+@media (max-height: 800px ) {
+  .navbar::before {
+    content: '';
+    position: absolute;
+    top: -95px;
+    left: 2px;
+    width: 1px; /* Adjust the width to change the thickness of the line */
+    height: 25%;
+    background: rgb(6, 182, 212); /* Change to the color of the line */
+  }
+  
+  .navbar::after {
+    content: '';
+    position: absolute;
+    top: 385px;
+    left: 2px;
+    width: 1px; /* Adjust the width to change the thickness of the line */
+    height: 30%;
+    background: rgb(6, 182, 212); /* Change to the color of the line */
+  }
+
+
+}

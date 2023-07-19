@@ -1,126 +1,140 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence, Variants } from 'framer-motion';
-import { SocialIcon } from 'react-social-icons';
+
+import { AnimatePresence, motion } from 'framer-motion';
 
 type Props = {};
 
-interface Project {
-  name: string;
-  image: string;
-  description: string;
-  github: string;
-  youtube: string;
-}
+export default function Experience({}: Props) {
+  const [selectedId, setSelectedId] = useState<string | null>(null);
 
-const logoVariants: Variants = {
-  hover: { scale: 1.1 },
-};
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-const cardVariants: Variants = {
-  hover: {
-    y: -10,
-    boxShadow: '0px 5px 20px rgba(0, 0, 0, 0.1)',
-  },
-};
+  const setId = (value: React.SetStateAction<string | null>) => {
+    setSelectedId(value);
+  };
 
-export default function projects({}: Props) {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [showCard, setShowCard] = useState(true);
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [showCardTwo, setShowCardTwo] = useState(true);
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const items = [
+    {
+      id: 'card1',
+      jobTitle: 'Help Desk Specialist',
+      companyLogo: 'images/lindbergh.png',
+      jobDuties: [
+        'Provide technical support',
+        'Log and track tickets in the database',
+        'Communicate efficiently with users',
+        'Collaborate with other students',
+      ],
+      datePosted: 'August 2020 - May 2021',
+    },
+    {
+      id: 'card2',
+      jobTitle: 'Service Porter',
+      companyLogo: 'images/toyota.png',
+      jobDuties: [
+        'Clean and prepare vehicles',
+        'Assist with vehicle transportation',
+        'Perform basic maintenance tasks',
+        'Ensure cleanliness and organization',
+      ],
+      datePosted: 'May 2021 - Current',
+    },
+  ];
 
   return (
-    <div className='flex relative h-screen text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center'>
-      <h3 className='absolute top-24 uppercase tracking-[20px] text-cyan-400 text-2xl'>Experience</h3>
-      <div></div>
-      <motion.div
-        //hover
-        whileHover={{
-          scale: 1.1,
-          boxShadow: '0 0 10px rgba(0,0,0,0.4)',
-          border: '1px solid rgba(34,211,238,0.6)',
-        }}
-        transition={{
-          layout: {
-            duration: 1,
-            type: 'spring',
-          },
-        }}
-        layout
-        className='mx-5 p-3 items-center mt-8'
-        onClick={() => setShowCard(!showCard)}
-      >
-        <motion.h4
-          layout='position'
-          className='uppercase tracking-[3px] underline decoration-[rgba(34,211,238,1)] text-center'
-        >
-          Lou Fusz Toyota - Porter
-        </motion.h4>
-        {showCard && (
-          <div className='text-center'>
-            <motion.img
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              src='/images/toyota.png'
-              className='h-[300px] flex justify-center'
-            />
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: 1,
-              }}
-            >
-              May 2021-Present
-            </motion.p>
-          </div>
-        )}
-      </motion.div>
+    <motion.div
+      initial={{ y: 500, opacity: 0, scale: 0.5 }}
+      animate={{ y: 0, opacity: 1, scale: 1 }}
+      transition={{ duration: 1.5 }}
+      className='h-screen relative flex text-center max-w-7xl px-5 md:px-10 mx-auto items-center justify-center overflow-hidden flex-wrap'
+    >
+      <h3 className='flex absolute text-center top-16 md:top-24 uppercase tracking-[20px] text-cyan-500 text-2xl'>
+        Experience
+      </h3>
+      <div className='flex justify-center flex-col md:flex-row items-center mt-10 '>
+        {items.map((item) => (
+          <motion.div
+            layoutId={item.id}
+            onClick={() => {
+              setSelectedId(item.id);
+              setIsModalOpen(true);
+            }}
+            key={item.id}
+            className='max-w-xs bg-gradient-to-r from-blue-500 to-cyan-600 rounded-lg overflow-hidden shadow-lg scr m-5 cursor-pointer  hover:scale-105'
+          >
+            <div className='p-4'>
+              <h5 className='text-lg font-bold mb-2 text-white underline underline-offset-8'>{item.jobTitle}</h5>
+              <div className='h-28 w-28 mx-auto mb-4 p-3 overflow-hidden'>
+                <img
+                  className='h-full w-full object-contain border-2 border-white-500 bg-gray-400'
+                  src={item.companyLogo}
+                  alt='company logo'
+                />
+              </div>
+              <p className='text-white text-base'>{item.datePosted}</p>
+              <p className='text-white text-base'>Click for more information!</p>
+            </div>
+          </motion.div>
+        ))}
 
-      <motion.div
-        //hover
-        whileHover={{
-          scale: 1.1,
-          boxShadow: '0 0 10px rgba(0,0,0,0.4)',
-          border: '1px solid rgba(34,211,238,0.6)',
-        }}
-        transition={{
-          layout: {
-            duration: 1,
-            type: 'spring',
-          },
-        }}
-        layout
-        className='mx-5 p-3 items-center mt-8'
-        onClick={() => setShowCardTwo(!showCardTwo)}
-      >
-        <motion.h4
-          layout='position'
-          className='uppercase tracking-[3px] underline decoration-[rgba(34,211,238,1)] text-center'
-        >
-          Lindbergh High School - Help Desk Specialist
-        </motion.h4>
-        {showCardTwo && (
-          <div className='text-center'>
-            <motion.img
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              src='/images/lindbergh.png'
-              className='h-[300px] flex justify-center'
-            />
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: 1,
-              }}
+        <AnimatePresence>
+          {selectedId && (
+            <motion.div
+              layoutId={selectedId}
+              className='fixed top-40 bg-gradient-to-r from-blue-500 to-cyan-600 border-2 border-white flex items-center justify-center test z-50'
             >
-              August 2020-May 2021
-            </motion.p>
+              {items.map((item) => {
+                if (item.id === selectedId) {
+                  return (
+                    <div key={item.id} className='max-w-xs rounded-lg scr m-5'>
+                      <div className=' text-white p-4'>
+                        <div className='grid grid-cols-2 mb-4'>
+                          <img
+                            className='h-28 w-28 border-white border-2 object-contain bg-gray-400'
+                            src={item.companyLogo}
+                            alt='company logo'
+                          />
 
-          </div>
-        )}
-      </motion.div>
-    </div>
+                          <div className=' space-y-5'>
+                            <h5 className='text-lg font-bold underline underline-offset-8'>{item.jobTitle}</h5>
+                            <p className='text-base'>{item.datePosted}</p>
+                          </div>
+                        </div>
+
+                        <div className='space-y-1 mb-4'>
+                          {item.jobDuties.map((duty, index) => (
+                            <div key={index} className='flex items-center space-x-2 list-disc list-inside'>
+                              <svg
+                                className='h-4 w-4 text-white'
+                                fill='none'
+                                viewBox='0 0 24 24'
+                                stroke='currentColor'
+                              >
+                                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M5 13l4 4L19 7' />
+                              </svg>
+                              <span>{duty}</span>
+                            </div>
+                          ))}
+                        </div>
+
+                        <motion.button
+                          onClick={() => setSelectedId(null)}
+                          className='bg-[rgba(36,36,36)] hover:bg-gray-700 text-white font-bold py-2 px-4 rounded'
+                        >
+                          Close
+                        </motion.button>
+                      </div>
+                    </div>
+                  );
+                }
+              })}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </motion.div>
   );
 }

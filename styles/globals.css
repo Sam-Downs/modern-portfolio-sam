@@ -6,6 +6,7 @@
   .animation-delay-2000 {
     animation-delay: 2s;
   }
+
   .animation-delay-4000 {
     animation-delay: 4s;
   }
@@ -22,20 +23,16 @@
 
 .number-slide1 {
   background: rgb(64, 175, 255);
-  background: linear-gradient(
-    128deg,
-    rgba(64, 175, 255, 1) 0%,
-    rgba(63, 97, 255, 1) 100%
-  );
+  background: linear-gradient(128deg,
+      rgba(64, 175, 255, 1) 0%,
+      rgba(63, 97, 255, 1) 100%);
 }
 
 .number-slide2 {
   background: rgb(255, 75, 64);
-  background: linear-gradient(
-    128deg,
-    rgba(255, 154, 63, 1) 0%,
-    rgba(255, 75, 64, 1) 100%
-  );
+  background: linear-gradient(128deg,
+      rgba(255, 154, 63, 1) 0%,
+      rgba(255, 75, 64, 1) 100%);
 }
 
 .navigation-wrapper {
@@ -91,3 +88,15 @@
 .arrow--disabled {
   fill: rgba(255, 255, 255, 0.5);
 }
+
+.test {
+  border-radius: 50px;
+  box-shadow: 20px 20px 32px #547db4,
+    -12px -12px 24px #8cd1ff;
+}
+
+.contactInput {
+    @apply outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424]
+    text-gray-500 placeholder-gray-500 transition-all focus:border-[#22D3EE]/40
+    focus:text-[#22D3EE]/40 hover:border-[#22D3EE]/40
+  }

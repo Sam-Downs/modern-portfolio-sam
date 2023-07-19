@@ -1,47 +1,30 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import React from 'react';
-import Background from './Background';
-import mypic from '../public/images/heroimg.png';
-import { motion } from 'framer-motion';
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
+import { Cursor, useTypewriter, Typewriter } from 'react-simple-typewriter'
+import BackgroundCircles from './BackgroundCircles'
 
-type Props = {};
+type Props = {}
 
-export default function Hero({}: Props) {
+export default function Hero({ }: Props) {
+  const [text, count] = useTypewriter({
+    words: ["Hi, The Name's Sam", "Guy-who-loves-to-travel.tsx", "<ButLovesToCodeMore />"],
+    loop: true,
+    delaySpeed: 2000,
+  })
   return (
-    <motion.div
-      initial={{ y: 500, opacity: 0, scale: 0.5 }}
-      animate={{ y: 0, opacity: 1, scale: 1 }}
-      transition={{ duration: 1.5 }}
-      className='h-screen flex flex-col items-center justify-center text-center overflow-hidden'
-    >
-      <Background />
-      <Image className='relative rounded-full mx-auto object-cover mb-12' alt='' src={mypic} width={128} height={128} />
+    <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
+      <BackgroundCircles />
+      <img
+        className='relative rounded-full h-32 w-32 mx-auto object-cover'
+        src='/images/heroimg.png' alt='A picture of me at a Worlds.' />
       <div className='z-20'>
-        <h2 className='text-sm uppercase text-cyan-500 pb-2 tracking-[10px] mt-2 mb-6'>Developer</h2>
-        <div className='pt-10'>
-          <Link href='#about'>
-            <button className='px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-500 transition-all hover:border-[rgba(34,211,238,0.6)] hover:text-[rgba(34,211,238,0.6)]'>
-              About
-            </button>
-          </Link>
-          <Link href='#experience'>
-            <button className='px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-500 transition-all hover:border-[rgba(34,211,238,0.6)] hover:text-[rgba(34,211,238,0.6)]'>
-              Experience
-            </button>
-          </Link>
-          <Link href='#skills'>
-            <button className='px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-500 transition-all hover:border-[rgba(34,211,238,0.6)] hover:text-[rgba(34,211,238,0.6)] '>
-              Skills
-            </button>
-          </Link>
-          <Link href='#projects'>
-            <button className='px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-500 transition-all hover:border-[rgba(34,211,238,0.6)] hover:text-[rgba(34,211,238,0.6)]'>
-              Projects
-            </button>
-          </Link>
-        </div>
+        <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>Software Developer</h2>
+        <h1 className='text-5xl lg:text-6xl font-semibold px-10'>
+          <span className='mr-3'>{text}</span>
+          <Cursor cursorColor='#22D3EE' />
+        </h1>
       </div>
-    </motion.div>
-  );
+    </div>
+  )
 }
