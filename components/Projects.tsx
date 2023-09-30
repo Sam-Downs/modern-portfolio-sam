@@ -57,7 +57,7 @@ interface CardData {
 const Portfolio: React.FC = () => {
   const cards: CardData[] = [
     {
-      imgSrc: '/images/firstfinal.png',
+      imgSrc: 'images/firstfinal.png',
       title: 'Anime Tracker',
       description:
         'A C# Windows Forms app with SQL Server backend, designed for tracking anime series. Features a progress bar, date markers, and customizable image uploads.',
@@ -66,7 +66,7 @@ const Portfolio: React.FC = () => {
       youtubeLink: 'https://youtu.be/XDzwMU3n_90',
     },
     {
-      imgSrc: '/images/secondfinal.png',
+      imgSrc: 'images/secondfinal.png',
       title: 'Issue Tracker',
       description: 'A web-based issue tracker built with the MERN stack. Complete user system, complete ticket system.',
       githubLink: [
@@ -76,7 +76,7 @@ const Portfolio: React.FC = () => {
       youtubeLink: 'https://youtu.be/R4elWmc_0nw',
     },
     {
-      imgSrc: '/images/thirdfinal.png',
+      imgSrc: 'images/thirdfinal.png',
       title: 'Sports Pro Application',
       description:
         'Full stack .Net application made with Asp.net core MVC and Azure. Full User system, and complete management over SportsPro.',
