@@ -99,4 +99,11 @@
     @apply outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424]
     text-gray-500 placeholder-gray-500 transition-all focus:border-[#22D3EE]/40
     focus:text-[#22D3EE]/40 hover:border-[#22D3EE]/40
-  }
+}
+
+.horizontal-scroll {
+  overflow-x: auto;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+} 

@@ -51,7 +51,7 @@ export default function Experience({}: Props) {
       transition={{ duration: 1.5 }}
       className='h-screen relative flex text-center max-w-7xl px-5 md:px-10 mx-auto items-center justify-center overflow-hidden flex-wrap'
     >
-      <h3 className='flex absolute text-center top-16 md:top-24 uppercase tracking-[20px] text-cyan-500 text-2xl'>
+      <h3 className='flex absolute text-center top-20 md:top-24 uppercase tracking-[14px] text-cyan-500 text-2xl'>
         Experience
       </h3>
       <div className='flex justify-center flex-col md:flex-row items-center mt-10 '>
@@ -63,7 +63,7 @@ export default function Experience({}: Props) {
               setIsModalOpen(true);
             }}
             key={item.id}
-            className='max-w-xs bg-gradient-to-r from-blue-500 to-cyan-600 rounded-lg overflow-hidden shadow-lg scr m-5 cursor-pointer  hover:scale-105'
+            className='max-w-xs bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg overflow-hidden shadow-lg scr m-5 cursor-pointer  hover:scale-105'
           >
             <div className='p-4'>
               <h5 className='text-lg font-bold mb-2 text-white underline underline-offset-8'>{item.jobTitle}</h5>
@@ -84,7 +84,7 @@ export default function Experience({}: Props) {
           {selectedId && (
             <motion.div
               layoutId={selectedId}
-              className='fixed top-40 bg-gradient-to-r from-blue-500 to-cyan-600 border-2 border-white flex items-center justify-center test z-50'
+              className='fixed top-40 bg-gradient-to-br from-cyan-500 to-blue-600 border-2 border-white flex items-center justify-center test z-50'
             >
               {items.map((item) => {
                 if (item.id === selectedId) {

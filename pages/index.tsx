@@ -35,16 +35,16 @@ const Home: NextPage = () => {
         <About />
       </section>
 
-      <section id='experience' className='snap-center sec'>
-        <Experience />
+      <section id='projects' className='snap-start sec'>
+        <Projects />
       </section>
 
       <section id='skills' className='snap-start sec'>
         <Skills />
       </section>
 
-      <section id='projects' className='snap-start sec'>
-        <Projects />
+      <section id='experience' className='snap-center sec'>
+        <Experience />
       </section>
 
       <section id='contact' className='snap-start sec'>

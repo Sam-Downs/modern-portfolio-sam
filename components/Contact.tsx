@@ -45,7 +45,7 @@ export default function Contact({}: Props) {
   };
   return (
     <div className='h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-center sm:justify-evenly mx-auto items-center md:space-x-8 space-y-8 md:space-y-0'>
-      <h3 className='md:absolute top-14 uppercase tracking-[20px] text-cyan-500 text-xl'>Contact</h3>
+      <h3 className='md:absolute lg:top-24 sm:top-14 uppercase tracking-[20px] text-cyan-500 text-xl'>Contact</h3>
       <div className='flex flex-col space-y-5'>
         <h4 className='text-2xl md:text-4xl font-semibold text-center'>
           I have got just what you need. <span className='decoration-[#22D3EE]/50 underline'>Lets Talk.</span>

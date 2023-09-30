@@ -26,10 +26,10 @@ const DotNav = () => {
           </Link>
         </li>
         <li>
-          <Link href="#experience">
+          <Link href="#projects">
             <span>
               <span className={styles.dot}>
-                <span>Experience</span>
+                <span>Projects</span>
               </span>
             </span>
           </Link>
@@ -44,10 +44,10 @@ const DotNav = () => {
           </Link>
         </li>
         <li>
-          <Link href="#projects">
+          <Link href="#experience">
             <span>
               <span className={styles.dot}>
-                <span>Projects</span>
+                <span>Experience</span>
               </span>
             </span>
           </Link>

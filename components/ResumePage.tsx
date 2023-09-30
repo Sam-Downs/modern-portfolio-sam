@@ -10,7 +10,7 @@ function ResumePage() {
         <p className='text-xl'>Learn more about my experience and skills.</p>
         <div className='flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4'>
           <a
-            href='/SamADownsResume.pdf'
+            href='/ResumeSamDowns.pdf'
             target='_blank'
             rel='noopener noreferrer'
             className='py-3 px-6 font-semibold text-white bg-cyan-500 rounded hover:bg-cyan-600 transition-colors duration-200 flex items-center justify-center space-x-2'
@@ -19,7 +19,7 @@ function ResumePage() {
             <span>View Resume</span>
           </a>
           <a
-            href='SamADownsResume.pdf'
+            href='ResumeSamDowns.pdf'
             download
             className='py-3 px-6 font-semibold text-white bg-cyan-500 rounded hover:bg-cyan-600 transition-colors duration-200 flex items-center justify-center space-x-2'
           >
