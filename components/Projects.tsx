@@ -2,7 +2,15 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaYoutube } from 'react-icons/fa';
 
-const Card = ({ imgSrc, title, description, githubLink, youtubeLink }) => {
+interface CardProps {
+  imgSrc: string;
+  title: string;
+  description: string;
+  githubLink: string | string[];
+  youtubeLink: string;
+}
+
+const Card: React.FC<CardProps> = ({ imgSrc, title, description, githubLink, youtubeLink }) => {
   return (
     <div className='mx-3 mt-6 flex flex-col rounded-lg bg-cyan-600 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]'>
       <a href='#!'>
@@ -39,9 +47,15 @@ const Card = ({ imgSrc, title, description, githubLink, youtubeLink }) => {
     </div>
   );
 };
-
-const Portfolio = () => {
-  const cards = [
+interface CardData {
+  imgSrc: string;
+  title: string;
+  description: string;
+  githubLink: string | string[];
+  youtubeLink: string;
+}
+const Portfolio: React.FC = () => {
+  const cards: CardData[] = [
     {
       imgSrc: '/images/firstfinal.png',
       title: 'Anime Tracker',
